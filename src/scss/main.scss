@@ -205,9 +205,9 @@ body {
             }
         }
 
-        .my-btn{
+        .my-btn-accent{
             height: 40px;
-            width: 100px;
+            padding: 0 20px 0 20px;
             border-radius: 50px;
             background-color: color(accent);
             color: color(primary);
@@ -377,7 +377,6 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         @include desktopSmall{
             grid-template-columns: repeat(auto-fit, minmax(512px, 1fr));
-            height: 100vh;
         }
         position: relative;
         z-index: 2;
@@ -390,7 +389,7 @@ body {
             h1{
                 color: color(primary);
                 text-align: center;
-                @include desktop{
+                @include desktopSmall{
                     text-align: left;
                 }
             }
@@ -399,7 +398,7 @@ body {
                 text-align: center;
                 margin: auto 4vw 9vw 4vw;
                 line-height: 1.9em;
-                @include desktop{
+                @include desktopSmall{
                     text-align: left;
                     margin: 0;
                 }
@@ -423,31 +422,197 @@ body {
         position: relative;
         z-index: 2;
         @include center(column, center , center );
+        .theme-shape{
+            position: absolute;
+            height: 200px;
+            z-index:-1;
+            top: 65%;
+            left: 35%;
+            transform: rotate(45deg);
+        }
+        .theme-shape-2{
+            position: absolute;
+            height: 200px;
+            z-index:-1;
+            bottom: 75%;
+            left: 10%;;
+            transform: rotate(45deg);
+        }
+
         @include desktop{
             height: 100vh;
+            .theme-shape{
+                position: absolute;
+                height: 500px;
+                z-index:-1;
+                top: 25%;
+                left: 74%;
+                transform: rotate(45deg);
+            }
+            .theme-shape-2{
+                position: absolute;
+                height: 300px;
+                z-index:-1;
+                bottom: 15%;
+                left: 7%;;
+                transform: rotate(45deg);
+            }
+    
+        }
+
+        
+        
+        h1{
+            color: color(primary);
+            margin: 160px 10px 0 10px;
+            text-align: center;
+        }
+
+        .myhr{
+            height: 5px;
+            width: 60px;
+            border-radius: 60px;
+            background-color: color(primary);
+            margin: 10px 0 80px 0;
+        }
+
+        .my-btn-primary{
+            height: 40px;
+            padding: 0 20px 0 20px;
+            margin: 0 0 80px 0 ;
+            border-radius: 50px;
+            background-color: color(primary);
+            color: color(accent);
+            font-weight: 600;
+            @include center(row, center, center);
+            -webkit-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.300);
+            -moz-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.300);
+            box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.300);
         }
 
         #cards{
-            
             @include center(column, center , center );
             @include desktop{
-                @include center(row, center , space-evenly );
+            @include center(row, space-evenly , center  );
+            width: 70vw;
             }
             .card{
-                margin: 0 0 10px 0;
+                margin: 0 0 50px 0;
                 height: 450px;
                 width: 300px;
                 background-color: white;
                 border-radius: 20px;
+                -webkit-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.541);
+                -moz-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.541);
+                box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.541);
+
+                h2{
+                    text-align: center;
+                    background-color: color(primary);
+                    height: 36%;
+                    margin: 0;
+                    border-top-left-radius: 20px;
+                    border-top-right-radius: 20px;
+                    @include center(column, center, center);
+                    color: color(accent);
+                }
+                p{
+                    text-align: center;
+                    @include center(column, center, center);
+                    margin: 25px 25px 0 25px;
+                    line-height: 1.9;
+                }
             }
         }
+    }
+
+
+    #Contact{
+        background-color: color(primary);
+        padding: 30px 0 0 0;
+        h1{
+           color: white;
+           text-align: center;
+           margin: 0;
+        }
+
+        p{
+            color: white;
+            text-align: center;
+            padding: 0 20px 0 20px;
+        }
+
+        #contact-form{
+            @include center(column, center , center );
+
+              textarea {
+                padding: 20px;
+                margin: 20px 0 30px 0;
+                width: 80vw;
+                height: 200px;
+                border: 0;
+                border-radius: 20px;
+                outline: none;
+                -webkit-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.541);
+                -moz-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.541);
+                box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.541);
+
+                &:focus{
+                    border: 3px solid color(accent);
+                }
+                @include desktop{
+                    width: 50vw;
+                }
+              }
+
+              input{
+                padding: 20px;
+                margin: 20px 0 0px 0;
+                width: 80vw;
+                height: 10px;
+                border: 0;
+                border-radius: 20px;
+                outline: none;
+                -webkit-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.541);
+                -moz-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.541);
+                box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.541);
+                &:focus{
+                    border: 3px solid color(accent);
+                }
+                @include desktop{
+                    width: 50vw;
+                }
+              }
+
+              .form-btn{
+                height: 40px;
+                width: 80vw;
+                padding: 0 20px 0 20px;
+                margin: 0 0 80px 0;
+                border-radius: 50px;
+                background-color: color(accent);
+                color: color(primary);
+                font-weight: 600;
+                @include center(row, center, center);
+                @include desktop{
+                    width: 50vw;
+                }
+                -webkit-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.541);
+                -moz-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.541);
+                box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.541);
+              }
+        }
+
     }
         
 }
 
+
+
 #footer{
-    grid-column: 2 / 12;
-    background-color: blue;
+    grid-column: 1 / -1;
+    background-color: #4A4A4A;
+    @include center(column, center , center )
 }
 
 .small-logo{

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CinqE Education Technologies</title>
-    <link rel="stylesheet" type="text/css" href="css/cssreset.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 </head>
@@ -63,7 +63,7 @@
                 </ul>
                 <h1>Your E-Learning Technologies Partner</h1>
                 <p>We teach people and machines.</p>
-                <div class="my-btn">
+                <div class="my-btn-accent">
                     <span>Learn More</span>
                 </div>
                 <svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1242 798">
@@ -105,13 +105,16 @@
                 </div>
             </section>
             <section id="products-section">
+                <img class="theme-shape" src="images/theme-shape.svg">
+                <img class="theme-shape-2" src="images/theme-shape.svg">
                 <h1>Our Products And Solutions</h1>
-                <hr>
+                <div class="myhr"></div>
                 <div id="cards">
                     <div class="card">
                         <h2>E-Learning Platforms</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas modi excepturi autem voluptate
-                            dolore?
+                            dolore.Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas modi excepturi autem
+                            voluptate dolore?
                         </p>
                     </div>
                     <div class="card">
@@ -127,22 +130,27 @@
                         </p>
                     </div>
                 </div>
-                <button>Lets Get To Business</button>
+                <div class="my-btn-primary">Lets Get To Business</div>
             </section>
             <section id="Contact">
+
+
                 <h1>Let's Have A Chat </h1>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, error.</p>
-                <form action="">
-                    <label>Name</label>
-                    <input name="name" placeholder="Type Here">
+                <form id="contact-form" action="" method="post">
 
-                    <label>Email</label>
-                    <input name="email" type="email" placeholder="Type Here">
+                    <input placeholder="Name" type="text" tabindex="1" required>
 
-                    <label>Message</label>
-                    <textarea name="message" placeholder="Type Here"></textarea>
 
-                    <input id="submit" name="submit" type="submit" value="Submit">
+
+                    <input placeholder="Email" type="email" tabindex="2" required>
+
+
+
+                    <textarea placeholder="What's up !" tabindex="5" required></textarea>
+
+
+                    <div class="form-btn">Send</div>
                 </form>
             </section>
         </main>
