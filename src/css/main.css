@@ -11,7 +11,7 @@ body {
   height: 100%;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 80px auto 180px; }
+  grid-template-rows: 80px auto 250px; }
 
 #header {
   grid-column: 1 / -1; }
@@ -462,6 +462,26 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+  #footer .adresse {
+    color: white;
+    text-align: center;
+    font-weight: 100;
+    margin-bottom: 0; }
+  #footer .email {
+    color: white;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 0; }
+  #footer .phone {
+    color: white;
+    text-align: center;
+    font-weight: 100;
+    margin-bottom: 50px; }
+  #footer #social-media-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
 
 .small-logo {
   height: 50px; }

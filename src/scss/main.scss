@@ -64,7 +64,7 @@ body {
     height: 100%;
     display: grid;
     grid-template-columns:repeat(12,1fr);
-    grid-template-rows: 80px auto 180px;
+    grid-template-rows: 80px auto 250px;
 
    
 }
@@ -612,7 +612,34 @@ body {
 #footer{
     grid-column: 1 / -1;
     background-color: #4A4A4A;
-    @include center(column, center , center )
+    @include center(column, center , center );
+
+    .adresse{
+        color: white;
+        text-align: center;
+        font-weight: 100;
+        margin-bottom: 0;
+    }
+
+    .email{
+        color: white;
+        text-align: center;
+        font-weight: 900; 
+        margin-bottom: 0;
+    }
+
+    .phone{
+        color: white;
+        text-align: center;
+        font-weight: 100;
+        margin-bottom: 50px;
+       
+    }
+
+    #social-media-icons{
+       
+        @include center(row, center, center);
+    }
 }
 
 .small-logo{
