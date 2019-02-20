@@ -45,6 +45,16 @@ $desktopSmall: 500px;
 }
 
 
+@mixin  ipads {
+    @media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    @content;
+}
+}
+
+
 
 
 
@@ -71,6 +81,10 @@ body {
 
 #header{
     grid-column: 1 / -1;
+
+    .small-logo{
+        height: 50px;
+    }
 
     #header-container{
         @include object(100%,100px,color(primary));
@@ -439,7 +453,7 @@ body {
             transform: rotate(45deg);
         }
 
-        @include desktop{
+        @include desktopSmall{
             height: 100vh;
             .theme-shape{
                 position: absolute;
@@ -459,6 +473,29 @@ body {
             }
     
         }
+
+        @include ipads{
+            height: 100vh;
+            .theme-shape{
+                position: absolute;
+                height: 150px;
+                z-index:-1;
+                top: 25%;
+                left: 74%;
+                transform: rotate(45deg);
+            }
+            .theme-shape-2{
+                position: absolute;
+                height: 100px;
+                z-index:-1;
+                bottom: 15%;
+                left: 7%;;
+                transform: rotate(45deg);
+            }
+    
+        }
+
+
 
         
         
@@ -492,10 +529,20 @@ body {
 
         #cards{
             @include center(column, center , center );
-            @include desktop{
-            @include center(row, space-evenly , center  );
-            width: 70vw;
+            @include desktopSmall{
+            @include center(row, space-between, center  );
+            width: 80vw;
             }
+            @include desktop{
+                @include center(row, space-evenly, center  );
+                width: 70vw;
+            }
+            @include ipads{
+            @include center(row, space-between, center  );
+            width: 90vw;
+            }
+
+
             .card{
                 margin: 0 0 50px 0;
                 height: 450px;
@@ -560,7 +607,7 @@ body {
                 &:focus{
                     border: 3px solid color(accent);
                 }
-                @include desktop{
+                @include desktopSmall{
                     width: 50vw;
                 }
               }
@@ -579,7 +626,7 @@ body {
                 &:focus{
                     border: 3px solid color(accent);
                 }
-                @include desktop{
+                @include desktopSmall{
                     width: 50vw;
                 }
               }
@@ -594,9 +641,10 @@ body {
                 color: color(primary);
                 font-weight: 600;
                 @include center(row, center, center);
-                @include desktop{
+                @include desktopSmall{
                     width: 50vw;
                 }
+                
                 -webkit-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.541);
                 -moz-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.541);
                 box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.541);
@@ -642,6 +690,3 @@ body {
     }
 }
 
-.small-logo{
-    height: 50px;
-}
