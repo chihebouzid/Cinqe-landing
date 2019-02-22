@@ -137,20 +137,27 @@
 
                 <h1>Let's Have A Chat </h1>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, error.</p>
-                <form id="contact-form" action="" method="post">
+                <form id="contact-form" class="gform" action="https://script.google.com/macros/s/AKfycbzGrrX88YHTrnP_U7s19r-yCSgqWxRcbv822dZF/exec"
+                    method="post">
 
-                    <input placeholder="Name" type="text" tabindex="1" required>
+                    <div style="display:none" class="thankyou_message">
+                        <p>Thank you for your message, you will hear from us soon.</p>
+                    </div>
+
+                    <input id="honeypot" type="text" name="honeypot" value="" />
+
+                    <input id="name" name="name" placeholder="Name" type="text" tabindex="1" required>
 
 
 
-                    <input placeholder="Email" type="email" tabindex="2" required>
+                    <input id="email" name="email" placeholder="Email" type="email" tabindex="2" required>
 
 
 
-                    <textarea placeholder="What's up !" tabindex="5" required></textarea>
+                    <textarea id="message" name="message" placeholder="What's up !" tabindex="5" required></textarea>
 
 
-                    <div class="form-btn">Send</div>
+                    <button class="form-btn">Send</button>
                 </form>
             </section>
         </main>
@@ -184,6 +191,7 @@
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
     <script src="js/main.js"></script>
 </body>
 

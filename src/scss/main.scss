@@ -590,6 +590,20 @@ body {
         }
 
         #contact-form{
+
+            #honeypot {
+                display: none; /*makes the field not visible to humans*/
+              }
+
+            .thankyou_message{
+                display:none;
+                font-weight: 100;
+                p{
+                    color:color(accent);
+                }
+            }
+
+
             @include center(column, center , center );
 
               textarea {
@@ -631,7 +645,9 @@ body {
                 }
               }
 
+
               .form-btn{
+                border:none;
                 height: 40px;
                 width: 80vw;
                 padding: 0 20px 0 20px;
@@ -640,6 +656,7 @@ body {
                 background-color: color(accent);
                 color: color(primary);
                 font-weight: 600;
+                cursor: pointer;
                 @include center(row, center, center);
                 @include desktopSmall{
                     width: 50vw;
