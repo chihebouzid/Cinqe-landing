@@ -3,7 +3,7 @@ $colors: (
     accent: #F9C02D
 );
 
-$desktop: 1556px;
+$desktop: 1024px;
 $desktopSmall: 500px;
 
 @function color($color-name){
@@ -44,15 +44,6 @@ $desktopSmall: 500px;
     }
 }
 
-
-@mixin  ipads {
-    @media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-    @content;
-}
-}
 
 
 
@@ -99,12 +90,25 @@ body {
         }
     
         #brand{
-            // background-color: aqua;
             margin: 0 0 0 17%;
             grid-column: 1 / 2;
             display: flex;
             align-items: center;
             cursor: pointer;
+            h1{
+                display: none;
+            }
+            @include desktop{
+                h1{
+                    display: inline;
+                    margin:  0 0 3px 10px;
+                    color: color(accent);
+                    font-size: 1.6em;
+                    font-weight: 500;
+                    font-family: 'Montserrat', sans-serif;
+                }
+            }
+            
         }
     
         #nav-menu{
@@ -191,11 +195,9 @@ body {
         height: 50px;
     }
 }
-
 #main{
     grid-column: 1 / 13;
     background-color: color(accent);
-
     #hero-section{
         height: 100vh;
         background: color(primary);
@@ -229,7 +231,7 @@ body {
             @include center(row, center, center);
         }
 
-        #Calque_1{
+        #mobile-wave{
             position: absolute;
             top: 80vh;
             @include desktopSmall {
@@ -386,7 +388,7 @@ body {
     }
 
     .about-section{
-        
+        overflow: hidden;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         @include desktopSmall{
@@ -402,18 +404,14 @@ body {
             
             h1{
                 color: color(primary);
-                text-align: center;
-                @include desktopSmall{
-                    text-align: left;
-                }
+                text-align: left;
             }
             p{
                 color: color(primary);
-                text-align: center;
+                text-align: left;
                 margin: auto 4vw 9vw 4vw;
                 line-height: 1.9em;
                 @include desktopSmall{
-                    text-align: left;
                     margin: 0;
                 }
             }
@@ -421,20 +419,15 @@ body {
         }
 
         .about-image{
+            padding: 0 5% 0 5%;
             @include center(column, center, center);
-            @include desktopSmall{
-                padding: 0 5vw 0 0;
-            }
             
         }     
     }
-
-
-
-
     #products-section{
         position: relative;
         z-index: 2;
+        overflow: hidden;
         @include center(column, center , center );
         .theme-shape{
             position: absolute;
@@ -453,8 +446,7 @@ body {
             transform: rotate(45deg);
         }
 
-        @include desktopSmall{
-            height: 100vh;
+        @include desktop{
             .theme-shape{
                 position: absolute;
                 height: 500px;
@@ -473,30 +465,6 @@ body {
             }
     
         }
-
-        @include ipads{
-            height: 100vh;
-            .theme-shape{
-                position: absolute;
-                height: 150px;
-                z-index:-1;
-                top: 25%;
-                left: 74%;
-                transform: rotate(45deg);
-            }
-            .theme-shape-2{
-                position: absolute;
-                height: 100px;
-                z-index:-1;
-                bottom: 15%;
-                left: 7%;;
-                transform: rotate(45deg);
-            }
-    
-        }
-
-
-
         
         
         h1{
@@ -521,6 +489,7 @@ body {
             background-color: color(primary);
             color: color(accent);
             font-weight: 600;
+            text-decoration: none;
             @include center(row, center, center);
             -webkit-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.300);
             -moz-box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.300);
@@ -529,17 +498,10 @@ body {
 
         #cards{
             @include center(column, center , center );
-            @include desktopSmall{
-            @include center(row, space-between, center  );
-            width: 80vw;
-            }
             @include desktop{
                 @include center(row, space-evenly, center  );
-                width: 70vw;
-            }
-            @include ipads{
-            @include center(row, space-between, center  );
-            width: 90vw;
+                width: 100vw;
+                
             }
 
 
@@ -564,16 +526,34 @@ body {
                     color: color(accent);
                 }
                 p{
-                    text-align: center;
+                    text-align: left;
                     @include center(column, center, center);
                     margin: 25px 25px 0 25px;
                     line-height: 1.9;
                 }
+
+                .btn-card{
+                    height: 40px;
+                    width: 40%;
+                    margin: 5% 10% 10% 22%;
+                    padding: 0 20px 0 20px;
+                    border-radius: 50px;
+                    border: 2px solid color(primary);
+                    color: color(primary);
+                    font-weight: 100;
+                    cursor: pointer;
+                    text-decoration: none;
+                    @include center(row, center, center);
+                    &:hover{
+                        background-color: color(primary);
+                        color: color(accent);
+                    }
+                }
             }
+
+            
         }
     }
-
-
     #Contact{
         background-color: color(primary);
         padding: 30px 0 0 0;
@@ -668,12 +648,8 @@ body {
               }
         }
 
-    }
-        
+    }       
 }
-
-
-
 #footer{
     grid-column: 1 / -1;
     background-color: #4A4A4A;
@@ -704,6 +680,12 @@ body {
     #social-media-icons{
        
         @include center(row, center, center);
+    }
+
+    .latest{
+        font-weight: 100;
+        color: white;
+        font-size: 0.7em;
     }
 }
 
