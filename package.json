@@ -4,7 +4,8 @@
   "description": "the landing page of the startup cinqe",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "jquery": "^3.3.1"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "gulp": "^4.0.0"
   }
 }
