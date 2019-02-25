@@ -222,6 +222,8 @@ body {
         }
 
         .my-btn-accent{
+            z-index: 99;
+            text-decoration: none;
             height: 40px;
             padding: 0 20px 0 20px;
             border-radius: 50px;
@@ -386,7 +388,6 @@ body {
 
 
     }
-
     .about-section{
         overflow: hidden;
         display: grid;
@@ -469,22 +470,22 @@ body {
         
         h1{
             color: color(primary);
-            margin: 160px 10px 0 10px;
+            margin: 160px 10px 10px 10px;
             text-align: center;
         }
 
         .myhr{
-            height: 5px;
+            height: 4px;
             width: 60px;
             border-radius: 60px;
             background-color: color(primary);
-            margin: 10px 0 80px 0;
+            margin: 10px 0 120px 0;
         }
 
         .my-btn-primary{
             height: 40px;
             padding: 0 20px 0 20px;
-            margin: 0 0 80px 0 ;
+            margin: 80px 0 140px 0 ;
             border-radius: 50px;
             background-color: color(primary);
             color: color(accent);

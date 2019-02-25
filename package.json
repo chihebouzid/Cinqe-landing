@@ -2,7 +2,7 @@
   "name": "cinqe-landing-page",
   "version": "1.0.0",
   "description": "the landing page of the startup cinqe",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,7 +28,9 @@
     "jquery": "^3.3.1"
   },
   "dependencies": {
-    "node-static": "^0.7.11",
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
     "normalize.css": "^8.0.1"
   }
 }
